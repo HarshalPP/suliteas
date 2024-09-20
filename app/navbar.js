@@ -19,7 +19,6 @@ const Navbar = () => {
     name: "",
     password: "",
   });
-
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("userData", JSON.stringify(formData));
