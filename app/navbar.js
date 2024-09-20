@@ -85,9 +85,9 @@ const Navbar = () => {
           </div>
 
           <div className=" ml-3" id="nav-drawer">
-            <div className="text-center my-auto ">
+            <div className="text-center my-auto flex justify-start ">
               <button
-                className="  focus:ring-4  font-medium rounded-lg text-[10px] mx-auto focus:outline-none "
+                className="  focus:ring-4  font-medium rounded-lg text-[10px] focus:outline-none "
                 type="button"
                 onClick={openDrawer}
               >
@@ -185,9 +185,10 @@ const Navbar = () => {
                 className="cursor-pointer 2xl:w-[21px] 2xl:h-[23px] xl:w-4 xl:h-4 lg:w-4 lg:h-4 md:w-4  sm:w-[14px] w-3"
               />
             </button>
+            <button className="relative">
             <Link href="/cart">
               {cart.length > 0 && (
-                <span className="absolute 2xl:text-[16px] text-[10px] 2xl:bottom-[18px] 2xl:left-[70px] xl:bottom-[13px] xl:left-[47px] lg:bottom-[13px] lg:left-[45px] md:bottom-[16px] md:left-[37px] sm:bottom-[13px] sm:left-[34px] bottom-[11px] left-[30px] border rounded-full p-[2px] lg:py-1  px-2 2xl:py-1 2xl:px-3 text-white bg-[#315031]">
+                <span className="absolute p-1 rounded-full top-[-25px] text-white bg-[#315031] text-[12px]">
                   {cart.length}
                 </span>
               )}
@@ -196,6 +197,7 @@ const Navbar = () => {
                 className="cursor-pointer 2xl:w-[21px] 2xl:h-[23px]  xl:w-4 xl:h-4 lg:w-4 lg:h-4 md:w-4  sm:w-[14px] w-3 relative"
               />
             </Link>
+            </button>
           </div>
           
         </div>

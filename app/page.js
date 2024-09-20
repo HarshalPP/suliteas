@@ -257,7 +257,7 @@ const page = () => {
                       className="text-center  bg-[#5C161D]  2xl:mt-[36%]  text-white rounded-[8px]  2xl:w-[300px] 2xl:py-[15px]  2xl:text-[18px] 2xl:mr-20 2xl:leading-[28px]  mx-auto  xl:w-[200px] xl:mr-20  lg:mr-10  xl:py-2  xl:text-[14px] xl:leading-[20px] xl:mt-24   lg:w-8/12 lg:py-[6px]  lg:text-[12px] lg:leading-[20px] lg:mt-20  md:w-9/12 md:py-[5px]  md:text-[14px] md:leading-[22px] md:mt-1  sm:w-9/12 sm:py-1  sm:text-[12px] sm:leading-[15px] sm:mt-1  w-11/12 py-[1px]  text-[10px] leading-[30px] mt-10 find-titles hover:bg-transparent hover:text-[#5C161D] border hover:border-[#5C161D]"
                       id="head"
                     >
-                      Immune Boost Beast
+                      Immune Beast
                     </h1>
                     <h1
                       data-aos="fade-right"
@@ -276,7 +276,7 @@ const page = () => {
                   </div>
                   <div
                     data-aos="zoom-out-up"
-                    className="border  w-2/4 mx-auto mt-10 rounded-[14px] 2xl:w-[550px] 2xl:mt-4
+                    className="border w-[90%] sm:mx-0 mt-10 rounded-[14px] 2xl:w-[550px] 2xl:mt-4
                      shadow-2xl 2xl:p-10 2xl:pb-3 xl:w-1/3 xl:px-10 xl:py-6 xl:pb-0 lg:px-6 lg:mt-0 lg:w-1/3 lg:py-4 lg:pb-0 md:px-5 md:py-3 md:mt-10 sm:mt-10 md:pb-0 sm:px-5 sm:py-3 sm:pb-0 sm:w-full sm:my-2 px-3 p-5  find-div"
                   >
                     <h1
@@ -363,7 +363,7 @@ const page = () => {
                   <Image
                     id="img1"
                     src={aa}
-                    className=" 2xl:w-[291px] 2xl:h-[292px] xl:w-48  lg:w-24   md:w-32 sm:w-28  mx-auto last-img"
+                    className=" 2xl:w-[291px] 2xl:h-[292px] xl:w-40 lg:w-24 md:w-32 sm:w-28  mx-auto last-img"
                   />
                   <div className="img3">
                     <Image id="img4" src={instagram} />
@@ -377,7 +377,7 @@ const page = () => {
                   <Image
                     id="img1"
                     src={bb}
-                    className=" 2xl:w-[291px] 2xl:h-[292px] xl:w-48  lg:w-24   md:w-32 sm:w-28  mx-auto last-img"
+                    className=" 2xl:w-[291px] 2xl:h-[292px] xl:w-40 lg:w-24 md:w-32 sm:w-28  mx-auto last-img"
                   />
                   <div className="img3">
                     <Image id="img4" src={instagram} />
@@ -391,7 +391,7 @@ const page = () => {
                   <Image
                     id="img1"
                     src={cc}
-                    className=" 2xl:w-full xl:w-48  lg:w-24   md:w-32 sm:w-28 w-full  last-img"
+                    className=" 2xl:w-full xl:w-40 lg:w-24   md:w-32 sm:w-28 w-full  last-img"
                   />
                   <div className="img3">
                     <Image id="img4" src={instagram} />
@@ -405,7 +405,7 @@ const page = () => {
                   <Image
                     id="img1"
                     src={dd}
-                    className=" 2xl:w-full xl:w-48  lg:w-24   md:w-32 sm:w-28 w-full "
+                    className=" 2xl:w-full xl:w-40 lg:w-24 md:w-32 sm:w-28 w-full "
                   />
                   <div className="img3">
                     <Image id="img4" src={instagram} />
@@ -418,7 +418,7 @@ const page = () => {
                   <Image
                     id="img1"
                     src={ee}
-                    className=" 2xl:w-full xl:w-48  lg:w-24   md:w-32 sm:w-28 w-full "
+                    className=" 2xl:w-full xl:w-40 lg:w-24   md:w-32 sm:w-28 w-full "
                   />
                   <div className="img3">
                     <Image id="img4" src={instagram} />
