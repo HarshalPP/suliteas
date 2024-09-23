@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useEffect } from "react";
 import Image from "next/image";
 import { Dialog, Transition } from "@headlessui/react";
 import cut from "../public/images/wrong.svg";
@@ -12,13 +12,13 @@ import { useCart } from "./create-context/cart-context";
 const Navbar = ({ title }) => {
   const { cart } = useCart();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
   const [dialogMatch, setDialogMatch] = useState(false);
-
   const [formData, setFormData] = useState({
     name: "",
     password: "",
   });
+  const [loading, setLoading] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("userData", JSON.stringify(formData));
@@ -44,6 +44,33 @@ const Navbar = ({ title }) => {
   const closeDrawer = () => {
     setIsDrawerOpen(false);
   };
+
+  const [posts, setPosts] = useState([]);
+  const [error, setError] = useState(null);
+  console.log(posts, "postass");
+  useEffect(() => {
+    setLoading(true);
+
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch(
+          "https://onlinebooktrip.com/wp-json/wp/v2/pages/54"
+        );
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setPosts(data);
+    setLoading(false);
+
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+
+    fetchPosts();
+  }, []);
+  const logo = posts.acf;
   return (
     <div>
       <nav className="border 2xl:py-8 xl:py-4 lg:py-4 md:py-4 sm:py-3 py-3  bg-white fixed top-0 w-full z-50 navv">
@@ -52,7 +79,7 @@ const Navbar = ({ title }) => {
             <div className="flex 2xl:gap-8 xl:gap-6 lg:gap-4 md:gap-4 sm:gap-2 py-auto ">
               <div>
                 <Link href="/">
-                {title === "home" ? (
+                  {title === "home" ? (
                     <li
                       id="nav-head"
                       className="cursor-pointer text-[#000]  border-b-[2px] border-[#000] list-none 2xl:text-[20px] 2xl:leading-6 xl:text-[14px] xl:leading-6 lg:text-[12px] lg:leading-4 md:text-[18px] md:leading-3 sm:text-[16px] text-[10px] sm:leading-2  hover:border-[#fff]"
@@ -90,7 +117,7 @@ const Navbar = ({ title }) => {
               </div>
               <div>
                 <Link href="/FAQ">
-                {title === "faqs" ? (
+                  {title === "faqs" ? (
                     <li
                       id="nav-head"
                       className="cursor-pointer text-[#000]  border-b-[2px] border-[#000] list-none 2xl:text-[20px] 2xl:leading-6 xl:text-[14px] xl:leading-6 lg:text-[12px] lg:leading-4 md:text-[18px] md:leading-3 sm:text-[16px] text-[10px] sm:leading-2 hover:border-[#fff] "
@@ -196,9 +223,16 @@ const Navbar = ({ title }) => {
               TEAS
             </h1> */}
             <Link href="/">
-              <img
-             alt="logo"
+              {/* <img
+                alt="logo"
                 src="/images/logo.png"
+                className="w-24 md:w-32 xl:w-40 2xl:w-52 mx-auto"
+              /> */}
+              <Image
+                src={logo?.home_logo?.home_logo_image}
+                width={197}
+                height={68}
+                alt="product_img"
                 className="w-24 md:w-32 xl:w-40 2xl:w-52 mx-auto"
               />
             </Link>
@@ -207,8 +241,7 @@ const Navbar = ({ title }) => {
           <div className="relative mr-6 xl:mr-0 lg:mr-0 flex justify-end 2xl:gap-10 xl:gap-6 lg:gap-5 md:gap-4 sm:gap-3 gap-3 my-auto ">
             <button onClick={() => setDialogMatch(true)}>
               <Image
-             alt="img"
-
+                alt="img"
                 src={user}
                 className="cursor-pointer 2xl:w-[21px] 2xl:h-[23px] xl:w-4 xl:h-4 lg:w-4 lg:h-4 md:w-4  sm:w-[14px] w-3"
               />
@@ -221,8 +254,7 @@ const Navbar = ({ title }) => {
                   </span>
                 )}
                 <Image
-             alt="img"
-
+                  alt="img"
                   src={shopbag}
                   className="cursor-pointer 2xl:w-[21px] 2xl:h-[23px]  xl:w-4 xl:h-4 lg:w-4 lg:h-4 md:w-4  sm:w-[14px] w-3 relative"
                 />

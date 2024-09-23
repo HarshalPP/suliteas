@@ -1,77 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import ListingsF from "../../public/images/Listings-1.webp";
-import ListingsS from "../../public/images/Listings-2.webp";
-import ListingsT from "../../public/images/Listings-3.webp";
-import ListingsFo from "../../public/images/Listings-4.webp";
-import ListingsFI from "../../public/images/Listings-5.webp";
-import ListingsSI from "../../public/images/Listings-6.webp";
+import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Navbar from "../navbar";
 import Footer from "../footer";
 
-export const products = [
-  {
-    name: "Weight Wonder",
-    price: "$17.00",
-    image: ListingsF,
-    id: 1,
-  },
-  {
-    name: "Detox Delite",
-    price: "$17.00",
-    image: ListingsS,
-    id: 2,
-  },
-  {
-    name: "Anxiety Assist",
-    price: "$17.00",
-    image: ListingsT,
-    id: 3,
-  },
-  {
-    name: "Champion Chai",
-    price: "$17.00",
-    image: ListingsFo,
-    id: 4,
-  },
-  {
-    name: "Anxiety Assist",
-    price: "$17.00",
-    image: ListingsFI,
-    id: 5,
-  },
-  {
-    name: "Immune Boost Beast",
-    price: "$17.00",
-    image: ListingsSI,
-    id: 6,
-  },
-];
-const ShopTea = () => {
-  const [posts, setPosts] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await fetch(
-          "https://onlinebooktrip.com/wp-json/wp/v2/unique-herb-teas"
-        );
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setPosts(data);
-      } catch (err) {
-        setError(err.message);
-      }
-    };
-
-    fetchPosts();
-  }, []);
-
+const ShopTea = async () => {
+  const res = await fetch(
+    "https://onlinebooktrip.com/wp-json/wp/v2/unique-herb-teas"
+  );
+  const posts = await res.json();
   return (
     <>
       <Navbar title={"shop-tea"} />
@@ -102,32 +39,30 @@ const ShopTea = () => {
             required.
           </p>
 
-      
-
           <div className=" mx-auto 2xl:mt-[74px] xl:mt-10 lg:mt-8 md:mt-4 sm:mt-4 mt-3">
             <div className="flex flex-wrap 2xl:gap-20 justify-center lg:justify-between md:flex-row md:gap-8 flex-col sm:gap-6 gap-6 ">
-            {Array.isArray(posts) && posts.map((post) => (
-
-                <div
-                  key={post.id}
-                  data-aos="zoom-out-up"
-                  className="2xl:mb-8 2xl:w-[446px] xl:w-[280px] lg:w-[200px] md:w-4/12 md:mx-0 sm:w-3/6 w-4/6 cursor-pointer mx-auto img-div"
-                >
-                  <Image
-                    src={post?.featured_image_url}
-                    width={500}
-                    height={500}
-                    alt="product_img"
-                    className=" 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-4/6 w-3/6 cursor-pointer mx-auto md:mx-0"
-                  />
-                  <h1 className="text-[#1E1E1E] text-center xl:text-[20px] 2xl:text-[30px] 2xl:mt-[18px] 2xl:leading-[50px]  xl:my-2 xl:leading-[35px] lg:my-2 lg:text-[14px] lg:leading-[25px] md:text-[16px] md:my-1 md:leading-[25px] sm:text-[14px] sm:mt-1 sm:leading-[30px] text-[10px] mt-1 leading-[20px] product-name font-semibold">
-                    {post.title.rendered}
-                  </h1>
-                  <h1 className="text-center 2xl:my-3 2xl:text-[36px] 2xl:leading-[25px] xl:text-[22px] xl:my-2 xl:leading-[20px] lg:text-[20px] lg:leading-[25px] md:text-[18px] md:my-1 md:leading-[25px] sm:text-[18px] sm:leading-[25px] text-[14px] product-price">
-                    {post.acf.product_price}
-                  </h1>
-                </div>
-              ))}
+              {Array.isArray(posts) &&
+                posts.map((post) => (
+                  <div
+                    key={post.id}
+                    data-aos="zoom-out-up"
+                    className="2xl:mb-8 2xl:w-[446px] xl:w-[280px] lg:w-[200px] md:w-4/12 md:mx-0 sm:w-3/6 w-4/6 cursor-pointer mx-auto img-div"
+                  >
+                    <Image
+                      src={post?.featured_image_url}
+                      width={500}
+                      height={500}
+                      alt="product_img"
+                      className=" 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-4/6 w-3/6 cursor-pointer mx-auto md:mx-0"
+                    />
+                    <h1 className="text-[#1E1E1E] text-center xl:text-[20px] 2xl:text-[30px] 2xl:mt-[18px] 2xl:leading-[50px]  xl:my-2 xl:leading-[35px] lg:my-2 lg:text-[14px] lg:leading-[25px] md:text-[16px] md:my-1 md:leading-[25px] sm:text-[14px] sm:mt-1 sm:leading-[30px] text-[10px] mt-1 leading-[20px] product-name font-semibold">
+                      {post.title.rendered}
+                    </h1>
+                    <h1 className="text-center 2xl:my-3 2xl:text-[36px] 2xl:leading-[25px] xl:text-[22px] xl:my-2 xl:leading-[20px] lg:text-[20px] lg:leading-[25px] md:text-[18px] md:my-1 md:leading-[25px] sm:text-[18px] sm:leading-[25px] text-[14px] product-price">
+                      {post.acf.product_price}
+                    </h1>
+                  </div>
+                ))}
             </div>
           </div>
         </div>
@@ -138,28 +73,3 @@ const ShopTea = () => {
 };
 
 export default ShopTea;
-
-/* <div className=" mx-auto 2xl:mt-[74px] xl:mt-10 lg:mt-8 md:mt-4 sm:mt-4 mt-3">
-            <div className="flex flex-wrap 2xl:gap-20 justify-center lg:justify-between md:flex-row md:gap-8 flex-col sm:gap-6 gap-6 ">
-              {products.map((product, index) => (
-                <Link href="/productD/[slug]" as={`/productD/${product.id}`}>
-                  <div
-                    key={index}
-                    data-aos="zoom-out-up"
-                    className="2xl:mb-8 2xl:w-[446px] xl:w-[280px] lg:w-[200px] md:w-4/12 md:mx-0 sm:w-3/6 w-4/6 cursor-pointer mx-auto img-div"
-                  >
-                    <Image
-                      src={product.image}
-                      className=" 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-4/6 w-3/6 cursor-pointer mx-auto md:mx-0"
-                    />
-                    <h1 className="text-[#1E1E1E] text-center xl:text-[20px] 2xl:text-[30px] 2xl:mt-[18px] 2xl:leading-[50px]  xl:my-2 xl:leading-[35px] lg:my-2 lg:text-[14px] lg:leading-[25px] md:text-[16px] md:my-1 md:leading-[25px] sm:text-[14px] sm:mt-1 sm:leading-[30px] text-[10px] mt-1 leading-[20px] product-name font-semibold">
-                      {product.name}
-                    </h1>
-                    <h1 className="text-center 2xl:my-3 2xl:text-[36px] 2xl:leading-[25px] xl:text-[22px] xl:my-2 xl:leading-[20px] lg:text-[20px] lg:leading-[25px] md:text-[18px] md:my-1 md:leading-[25px] sm:text-[18px] sm:leading-[25px] text-[14px] product-price">
-                      {product.price}
-                    </h1>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div> */
