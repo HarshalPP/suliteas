@@ -2,5 +2,6 @@
   "/not-found": "app/not-found.js",
   "/page": "app/page.js",
   "/shop-teas/page": "app/shop-teas/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/FAQ/page": "app/FAQ/page.js"
 }
