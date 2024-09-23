@@ -78,8 +78,8 @@ export const products = [
       "This product combines the power of eight renowned herbs known for their immune-boosting and pathogen-fighting capabilities. These herbs have a rich historical background, from Hippocrates considering elderberry as a versatile medicinal aid to the Washoe tribe of Nevada relying on lomatium for survival during a tough time.",
   },
 ];
-
-const page = () => {
+const page = ({ initialPosts }) => {
+  console.log({ initialPosts }, "Mydata");
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const [loading, setLoading] = useState(false);
@@ -106,11 +106,33 @@ const page = () => {
     setIsDrawerOpen(false);
   };
 
+  const [posts, setPosts] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch(
+          "https://onlinebooktrip.com/wp-json/wp/v2/pages/54"
+        );
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setPosts(data);
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+
+    fetchPosts
+})
+
   return (
     <>
       <section>
         <div className="">
-          <Navbar />
+          <Navbar title={"home"} />
           <div
             className="border border-red flex  2xl:py-[0px] 2xl:h-screen xl:py-44 lg:py-[132px] md:pt-24 md:pb-24 sm:pt-20 sm:pb-20 pt-6 pb-6 h-auto xms-m xl:mt-14 2xl:mt-20 mt-[60px]"
             id="bg-poster"
@@ -179,6 +201,7 @@ const page = () => {
               </div>
             </div>
           </div>
+          
           <div className="flex justify-center  2xl:mt-[100px] xl:mt-16 lg:mt-16 md:mt-10 sm:mt-6 my-10">
             <div className="2xl:w-[1500px] xl:w-[1000px]  lg:w-[750px]   mx-auto nav ">
               <Image
@@ -238,6 +261,7 @@ const page = () => {
               </div>
             </div>
           </div>
+
           <div>
             <div
               className=" w-full xl:mt-[60px] 2xl:pb-48 lg:mt-12 md:mt-10 sm:mt-10 mt-5 "
@@ -334,6 +358,7 @@ const page = () => {
               </div>
             </div>
           </div>
+
           <div className=" sm:w-full mx-auto2xl:mt-36 2xl:mt-40 xl:mt-32 lg:mt-20 sm:mt mb-10 ">
             <div className=" 2xl:w-[1500px] xl:w-[1000px]  lg:w-[750px]  mx-auto  nav">
               <div className="mt-12 ">

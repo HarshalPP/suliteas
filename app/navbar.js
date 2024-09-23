@@ -9,7 +9,7 @@ import shopbag from "../public/images/shopbag.webp";
 import Link from "next/link";
 import { useCart } from "./create-context/cart-context";
 
-const Navbar = () => {
+const Navbar = ({ title }) => {
   const { cart } = useCart();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -48,37 +48,63 @@ const Navbar = () => {
     <div>
       <nav className="border 2xl:py-8 xl:py-4 lg:py-4 md:py-4 sm:py-3 py-3  bg-white fixed top-0 w-full z-50 navv">
         <div className="2xl:w-[1500px] xl:w-[1000px]  lg:w-[880px] grid grid-cols-3 m-auto nav">
-
           <div id="nav-menu" className=" my-auto ">
             <div className="flex 2xl:gap-8 xl:gap-6 lg:gap-4 md:gap-4 sm:gap-2 py-auto ">
               <div>
                 <Link href="/">
-                  <li
-                    id="nav-head"
-                    className=" cursor-pointer  list-none 2xl:text-[20px] 2xl:leading-6 xl:text-[14px] xl:leading-6 lg:text-[12px] lg:leading-4 text-[#666666] md:text-[18px] md:leading-3 sm:text-[16px] sm:leading-2 text-[10px] "
-                  >
-                    Home
-                  </li>
+                {title === "home" ? (
+                    <li
+                      id="nav-head"
+                      className="cursor-pointer text-[#000]  border-b-[2px] border-[#000] list-none 2xl:text-[20px] 2xl:leading-6 xl:text-[14px] xl:leading-6 lg:text-[12px] lg:leading-4 md:text-[18px] md:leading-3 sm:text-[16px] text-[10px] sm:leading-2  hover:border-[#fff]"
+                    >
+                      Home
+                    </li>
+                  ) : (
+                    <li
+                      id="nav-head"
+                      className="cursor-pointer list-none 2xl:text-[20px] 2xl:leading-6 xl:text-[14px] xl:leading-6 lg:text-[12px] lg:leading-4 md:text-[18px] md:leading-3 sm:text-[16px] text-[10px] sm:leading-2 text-[#666666] "
+                    >
+                      Home
+                    </li>
+                  )}
                 </Link>
               </div>
               <div className="my-auto ">
                 <Link href="/shop-teas">
-                  <li
-                    id="nav-head"
-                    className="cursor-pointer list-none 2xl:text-[20px] 2xl:leading-6 xl:text-[14px] xl:leading-6 lg:text-[12px] lg:leading-4 md:text-[18px] md:leading-3 sm:text-[16px] text-[10px] sm:leading-2 text-[#666666] "
-                  >
-                    Shop Teas
-                  </li>
+                  {title === "shop-tea" ? (
+                    <li
+                      id="nav-head"
+                      className="cursor-pointer text-[#000]  border-b-[2px] border-[#000] list-none 2xl:text-[20px] 2xl:leading-6 xl:text-[14px] xl:leading-6 lg:text-[12px] lg:leading-4 md:text-[18px] md:leading-3 sm:text-[16px] text-[10px] sm:leading-2 hover:border-[#fff] "
+                    >
+                      Shop Teas
+                    </li>
+                  ) : (
+                    <li
+                      id="nav-head"
+                      className="cursor-pointer list-none 2xl:text-[20px] 2xl:leading-6 xl:text-[14px] xl:leading-6 lg:text-[12px] lg:leading-4 md:text-[18px] md:leading-3 sm:text-[16px] text-[10px] sm:leading-2 text-[#666666] "
+                    >
+                      Shop Teas
+                    </li>
+                  )}
                 </Link>
               </div>
               <div>
                 <Link href="/FAQ">
-                  <li
-                    id="nav-head"
-                    className="cursor-pointer list-none 2xl:text-[20px] 2xl:leading-6 xl:text-[14px] xl:leading-6 lg:text-[12px] lg:leading-4 md:text-[18px] md:leading-3 sm:text-[16px] text-[10px] sm:leading-2 text-[#666666] "
-                  >
-                    FAQs
-                  </li>
+                {title === "faqs" ? (
+                    <li
+                      id="nav-head"
+                      className="cursor-pointer text-[#000]  border-b-[2px] border-[#000] list-none 2xl:text-[20px] 2xl:leading-6 xl:text-[14px] xl:leading-6 lg:text-[12px] lg:leading-4 md:text-[18px] md:leading-3 sm:text-[16px] text-[10px] sm:leading-2 hover:border-[#fff] "
+                    >
+                      FAQs
+                    </li>
+                  ) : (
+                    <li
+                      id="nav-head"
+                      className="cursor-pointer list-none 2xl:text-[20px] 2xl:leading-6 xl:text-[14px] xl:leading-6 lg:text-[12px] lg:leading-4 md:text-[18px] md:leading-3 sm:text-[16px] text-[10px] sm:leading-2 text-[#666666] "
+                    >
+                      FAQs
+                    </li>
+                  )}
                 </Link>
               </div>
             </div>
@@ -161,7 +187,7 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          
+
           <div className="flex justify-center  ">
             {/* <h1
               className="my-auto 2xl:text-[35px] xl:text-[25px] lg:text-[20px] md:text-[18px]  sm:text-[16px] text-[14px]"
@@ -177,7 +203,6 @@ const Navbar = () => {
             </Link>
           </div>
 
-
           <div className="relative mr-6 xl:mr-0 lg:mr-0 flex justify-end 2xl:gap-10 xl:gap-6 lg:gap-5 md:gap-4 sm:gap-3 gap-3 my-auto ">
             <button onClick={() => setDialogMatch(true)}>
               <Image
@@ -186,20 +211,19 @@ const Navbar = () => {
               />
             </button>
             <button className="relative">
-            <Link href="/cart">
-              {cart.length > 0 && (
-                <span className="absolute p-1 rounded-full top-[-25px] text-white bg-[#315031] text-[12px]">
-                  {cart.length}
-                </span>
-              )}
-              <Image
-                src={shopbag}
-                className="cursor-pointer 2xl:w-[21px] 2xl:h-[23px]  xl:w-4 xl:h-4 lg:w-4 lg:h-4 md:w-4  sm:w-[14px] w-3 relative"
-              />
-            </Link>
+              <Link href="/cart">
+                {cart.length > 0 && (
+                  <span className="absolute p-1 rounded-full top-[-25px] text-white bg-[#315031] text-[12px]">
+                    {cart.length}
+                  </span>
+                )}
+                <Image
+                  src={shopbag}
+                  className="cursor-pointer 2xl:w-[21px] 2xl:h-[23px]  xl:w-4 xl:h-4 lg:w-4 lg:h-4 md:w-4  sm:w-[14px] w-3 relative"
+                />
+              </Link>
             </button>
           </div>
-          
         </div>
       </nav>
       {/* ----------popup----------- */}

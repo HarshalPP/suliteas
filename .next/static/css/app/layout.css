@@ -619,41 +619,14 @@ video {
 .inset-0 {
   inset: 0px;
 }
-.bottom-\[11px\] {
-  bottom: 11px;
-}
 .left-0 {
   left: 0px;
-}
-.left-\[30px\] {
-  left: 30px;
 }
 .top-0 {
   top: 0px;
 }
-.left-\[130px\] {
-  left: 130px;
-}
-.top-\[\] {
-  top: ;
-}
-.top-\[-5\] {
-  top: -5;
-}
-.top-\[-5px\] {
-  top: -5px;
-}
-.top-\[-50px\] {
-  top: -50px;
-}
-.top-\[-20px\] {
-  top: -20px;
-}
 .top-\[-25px\] {
   top: -25px;
-}
-.top-\[-30px\] {
-  top: -30px;
 }
 .z-10 {
   z-index: 10;
@@ -1058,8 +1031,15 @@ video {
 .border-b-4 {
   border-bottom-width: 4px;
 }
+.border-b-\[2px\] {
+  border-bottom-width: 2px;
+}
 .border-t-4 {
   border-top-width: 4px;
+}
+.border-\[\#000\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 .border-\[\#315031\] {
   --tw-border-opacity: 1;
@@ -1166,9 +1146,6 @@ video {
 }
 .p-\[1px\] {
   padding: 1px;
-}
-.p-\[2px\] {
-  padding: 2px;
 }
 .px-1 {
   padding-left: 0.25rem;
@@ -1335,6 +1312,10 @@ video {
 .text-\[\#\#1E1E1E\] {
   color: ##1E1E1E;
 }
+.text-\[\#000\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
 .text-\[\#1E1E1E\] {
   --tw-text-opacity: 1;
   color: rgb(30 30 30 / var(--tw-text-opacity));
@@ -1431,6 +1412,7 @@ video {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 @import url("https://fonts.googleapis.com/css2?family=Lexend&display=swap");
+
 @font-face {
   font-family: "Lexend";
   src: url(/_next/static/media/Lexend-VariableFont_wght.274314df.ttf);
@@ -1441,14 +1423,17 @@ video {
   font-family: "Lexend";
   font-weight: 600;
 }
+
 #head {
   font-family: "Lexend";
   font-weight: 500;
 }
+
 #nav-head {
   font-family: "Lexend";
   font-weight: 400;
 }
+
 #p-font {
   font-family: "Lexend";
   font-weight: 300;
@@ -1543,6 +1528,7 @@ video {
     font-size: 18px;
   }
 }
+
 .custom_input {
   position: relative;
   margin: 0.25rem;
@@ -1563,12 +1549,14 @@ video {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
+
 .custom_input:focus {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
+
 @media (min-width: 640px) {
 
   .custom_input {
@@ -1582,6 +1570,7 @@ video {
     line-height: 1.25rem;
   }
 }
+
 @media (min-width: 768px) {
 
   .custom_input {
@@ -1595,6 +1584,7 @@ video {
     line-height: 1.25rem;
   }
 }
+
 @media (min-width: 1024px) {
 
   .custom_input {
@@ -1608,6 +1598,7 @@ video {
     line-height: 1.25rem;
   }
 }
+
 @media (min-width: 1280px) {
 
   .custom_input {
@@ -1621,6 +1612,7 @@ video {
     line-height: 1.5rem;
   }
 }
+
 @media (min-width: 1536px) {
 
   .custom_input {
@@ -1635,6 +1627,7 @@ video {
     line-height: 1.25rem;
   }
 }
+
 @media (prefers-color-scheme: dark) {
 
   .custom_input {
@@ -1643,6 +1636,7 @@ video {
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
   }
 }
+
 #bg-posterS {
   background-image: url(/_next/static/media/Group.46ee05c3.png);
   background-repeat: no-repeat;
@@ -1665,16 +1659,19 @@ video {
     display: block !important;
   }
 }
+
 @media (min-width: 1024px) {
   #nav-drawer {
     display: none !important;
   }
 }
+
 @media (max-width: 1024px) {
   #nav-menu {
     display: none;
   }
 }
+
 @media (min-width: 1024px) {
   #nav-menu {
     display: block;
@@ -1685,6 +1682,7 @@ video {
   .navv {
     padding: 20px 0px !important;
   }
+
   .nav {
     width: 1200px !important;
   }
@@ -1692,23 +1690,29 @@ video {
   .img-div {
     width: 345px !important;
   }
+
   .arrow {
     margin-left: 275px !important;
   }
+
   .find-div {
     width: 415px !important;
   }
+
   .div-Champion {
     margin-left: auto !important;
   }
+
   .last-img {
     width: 240px !important;
     height: 240px !important;
   }
+
   .text-Mixing {
     font-size: 30px !important;
     line-height: 28px !important;
   }
+
   .text-Curated {
     line-height: 60px !important;
     font-size: 55px !important;
@@ -1718,92 +1722,114 @@ video {
     line-height: 70px !important;
     font-size: 70px !important;
   }
+
   .pera-Explore {
     margin: 22px 0px !important;
     font-size: 14px !important;
   }
+
   .btn-curv {
     margin-top: 0px !important;
   }
+
   .head-bttn {
     font-size: 16px !important;
     line-height: 18px !important;
     padding: 16px 4px !important;
   }
+
   .Unique-head {
     font-size: 50px !important;
     line-height: 50px !important;
     margin-top: 20px !important;
   }
+
   .noAdded-head {
     font-size: 30px !important;
     line-height: 40px !important;
   }
+
   .Bringing-pera {
     width: 50% !important;
   }
+
   .product-name {
     font-size: 20px !important;
     line-height: 30px !important;
   }
+
   .product-price {
     font-size: 25px !important;
     line-height: 20px !important;
   }
+
   .Find-head {
     font-size: 45px !important;
     line-height: 30px !important;
   }
+
   .suli {
     font-size: 20px !important;
     line-height: 25px !important;
   }
+
   .find-titles {
     width: 240px !important;
     font-size: 16px !important;
     padding: 8px !important;
   }
+
   .find-price {
     font-size: 35px !important;
     line-height: 25px !important;
     padding: 10px 14px !important;
     margin-top: 10px !important;
   }
+
   .find-btn-curv {
     padding: 0px 30px !important;
     margin: 15px 0px !important;
   }
+
   .find-btn {
     font-size: 18px !important;
     line-height: 20px !important;
     padding: 16px 14px !important;
   }
+
   .Instagram-head {
     font-size: 20px !important;
     line-height: 10px !important;
   }
+
   .SuliTeas {
     font-size: 40px !important;
     line-height: 60px !important;
   }
+
   .last-div {
     margin-top: 10px !important;
   }
+
   .last-img {
     width: 225px !important;
     height: 225px !important;
   }
+
   .footer-logo {
     font-size: 35px !important;
   }
+
   .footer-hesdings {
     font-size: 16px !important;
     line-height: 25px !important;
   }
+
   .footer-0ptions {
     font-size: 16px !important;
     line-height: 20px !important;
   }
+
   .arrow {
     margin-left: 270px !important;
   }
@@ -1813,6 +1839,7 @@ video {
   .xsm-drawer {
     width: 25%;
   }
+
   .xms-m {
     padding: 50px 0px;
   }
@@ -1851,6 +1878,7 @@ video {
 #image2 {
   position: relative;
 }
+
 #img1 {
   opacity: 1;
   display: block;
@@ -1859,6 +1887,7 @@ video {
   transition: 0.5s ease;
   backface-visibility: hidden;
 }
+
 #img4 {
   transition: 0.5s ease;
   opacity: 0;
@@ -1869,12 +1898,15 @@ video {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
+
 #image2:hover #img1 {
   opacity: 0.3;
 }
+
 #image2:hover #img4 {
   opacity: 1;
 }
+
 #image2:hover::before {
   content: "";
   position: absolute;
@@ -1886,6 +1918,7 @@ video {
   z-index: -1;
   border-radius: 10px;
 }
+
 #img4 {
   width: 30px;
   font-size: 50px;
@@ -1896,6 +1929,7 @@ video {
   border: 1px solid #cccfdb;
   border-radius: 1px;
 }
+
 #hover-underline-animation {
   display: inline-block;
   position: relative;
@@ -1903,7 +1937,6 @@ video {
 
 #hover-underline-animation:after {
   content: "";
-
   width: 100%;
   transform: scaleX(0);
   height: 2px;
@@ -1989,6 +2022,11 @@ li:hover::before {
   border-color: rgb(164 119 80 / var(--tw-border-opacity));
 }
 
+.hover\:border-\[\#fff\]:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }
@@ -2040,14 +2078,6 @@ li:hover::before {
 }
 
 @media (min-width: 640px) {
-
-  .sm\:bottom-\[13px\] {
-    bottom: 13px;
-  }
-
-  .sm\:left-\[34px\] {
-    left: 34px;
-  }
 
   .sm\:mx-0 {
     margin-left: 0px;
@@ -2443,14 +2473,6 @@ li:hover::before {
 
 @media (min-width: 768px) {
 
-  .md\:bottom-\[16px\] {
-    bottom: 16px;
-  }
-
-  .md\:left-\[37px\] {
-    left: 37px;
-  }
-
   .md\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
@@ -2797,14 +2819,6 @@ li:hover::before {
 
 @media (min-width: 1024px) {
 
-  .lg\:bottom-\[13px\] {
-    bottom: 13px;
-  }
-
-  .lg\:left-\[45px\] {
-    left: 45px;
-  }
-
   .lg\:m-0 {
     margin: 0px;
   }
@@ -3080,11 +3094,6 @@ li:hover::before {
     padding-bottom: 0px;
   }
 
-  .lg\:py-1 {
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-  }
-
   .lg\:py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -3235,38 +3244,6 @@ li:hover::before {
 
 @media (min-width: 1280px) {
 
-  .xl\:bottom-\[13px\] {
-    bottom: 13px;
-  }
-
-  .xl\:left-\[47px\] {
-    left: 47px;
-  }
-
-  .xl\:left-\[1007px\] {
-    left: 1007px;
-  }
-
-  .xl\:left-\[207px\] {
-    left: 207px;
-  }
-
-  .xl\:right-\[47px\] {
-    right: 47px;
-  }
-
-  .xl\:left-\[7px\] {
-    left: 7px;
-  }
-
-  .xl\:left-\[0px\] {
-    left: 0px;
-  }
-
-  .xl\:right-\[0px\] {
-    right: 0px;
-  }
-
   .xl\:m-0 {
     margin: 0px;
   }
@@ -3406,10 +3383,6 @@ li:hover::before {
 
   .xl\:w-40 {
     width: 10rem;
-  }
-
-  .xl\:w-48 {
-    width: 12rem;
   }
 
   .xl\:w-6 {
@@ -3662,14 +3635,6 @@ li:hover::before {
 }
 
 @media (min-width: 1536px) {
-
-  .\32xl\:bottom-\[18px\] {
-    bottom: 18px;
-  }
-
-  .\32xl\:left-\[70px\] {
-    left: 70px;
-  }
 
   .\32xl\:mx-auto {
     margin-left: auto;
@@ -4018,11 +3983,6 @@ li:hover::before {
     padding-right: 2.5rem;
   }
 
-  .\32xl\:px-3 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-
   .\32xl\:px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -4036,11 +3996,6 @@ li:hover::before {
   .\32xl\:px-\[16px\] {
     padding-left: 16px;
     padding-right: 16px;
-  }
-
-  .\32xl\:py-1 {
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
   }
 
   .\32xl\:py-3 {
@@ -4236,4 +4191,3 @@ li:hover::before {
     background-color: rgb(31 41 55 / var(--tw-bg-opacity));
   }
 }
-
