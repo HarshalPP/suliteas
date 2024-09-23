@@ -102,29 +102,7 @@ const ShopTea = () => {
             required.
           </p>
 
-          {/* <div>
-            {posts.map((post) => (
-              <div key={post.id}>
-                <h2>{post.title.rendered}</h2>
-                {post.featured_image && (
-                  <Image
-                    src={post.guid}
-                    alt={post.title.rendered}
-                    style={{ maxWidth: "100%", height: "auto" }}
-                  />
-                )}
-                <p
-                  dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
-                />
-                <p>{post.acf.product_price}</p>
-                <p>{post.acf.product_weight}</p>
-
-                <a href={post.link} target="_blank" rel="noopener noreferrer">
-                  Read more
-                </a>
-              </div>
-            ))}
-          </div> */}
+      
 
           <div className=" mx-auto 2xl:mt-[74px] xl:mt-10 lg:mt-8 md:mt-4 sm:mt-4 mt-3">
             <div className="flex flex-wrap 2xl:gap-20 justify-center lg:justify-between md:flex-row md:gap-8 flex-col sm:gap-6 gap-6 ">

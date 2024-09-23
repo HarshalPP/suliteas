@@ -197,6 +197,7 @@ const Navbar = ({ title }) => {
             </h1> */}
             <Link href="/">
               <img
+             alt="logo"
                 src="/images/logo.png"
                 className="w-24 md:w-32 xl:w-40 2xl:w-52 mx-auto"
               />
@@ -206,6 +207,8 @@ const Navbar = ({ title }) => {
           <div className="relative mr-6 xl:mr-0 lg:mr-0 flex justify-end 2xl:gap-10 xl:gap-6 lg:gap-5 md:gap-4 sm:gap-3 gap-3 my-auto ">
             <button onClick={() => setDialogMatch(true)}>
               <Image
+             alt="img"
+
                 src={user}
                 className="cursor-pointer 2xl:w-[21px] 2xl:h-[23px] xl:w-4 xl:h-4 lg:w-4 lg:h-4 md:w-4  sm:w-[14px] w-3"
               />
@@ -218,6 +221,8 @@ const Navbar = ({ title }) => {
                   </span>
                 )}
                 <Image
+             alt="img"
+
                   src={shopbag}
                   className="cursor-pointer 2xl:w-[21px] 2xl:h-[23px]  xl:w-4 xl:h-4 lg:w-4 lg:h-4 md:w-4  sm:w-[14px] w-3 relative"
                 />

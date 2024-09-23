@@ -176,6 +176,7 @@ const Footer = () => {
                   Subscribe to our emails
                 </h1>
                 <Image
+                  alt="img"
                   src={arrow}
                   className="absolute z-20 ml-[150px] mt-2 2xl:w-7  2xl:ml-[335px]  2xl:mt-[10px] 2xl:mb-4 xl:w-4  xl:ml-[220px]  xl:mt-[11px] lg:ml-[220px] lg:w-4 lg:mt-[6px]  md:w-3 md:mt-[10px] md:ml-[290px] sm:w-3 sm:mt-2 sm:ml-[210px] arrow w-3"
                 />
@@ -187,12 +188,14 @@ const Footer = () => {
                 <div className="flex justify-center md:justify-center lg:justify-start sm:justify-center 2xl:gap-7  2xl:my-5 xl:gap-5  xl:my-3 lg:my-2 lg:gap-4 md:my-5 sm:my-5 md:w-11/12  md:gap-4 sm:gap-4 my-2 gap-4  ">
                   <Link href="https://twitter.com/" target="_blank">
                     <Image
+                      alt="img"
                       src={twitter}
                       className=" 2xl:w-[18px] xl:w-[22px] lg:w-[14px] md:w-[14px] w-[14px] "
                     />
                   </Link>
                   <Link href="https://www.facebook.com/login/" target="_blank">
                     <Image
+                      alt="img"
                       src={fbb}
                       className=" 2xl:w-5 xl:w-6 lg:w-4 md:w-4 w-4"
                     />
@@ -202,6 +205,7 @@ const Footer = () => {
                     target="_blank"
                   >
                     <Image
+                      alt="img"
                       src={insta}
                       className=" 2xl:w-5 xl:w-6 lg:w-4 md:w-[16px] w-4 "
                     />
@@ -211,12 +215,14 @@ const Footer = () => {
                     target="_blank"
                   >
                     <Image
+                      alt="img"
                       src={music}
                       className=" 2xl:w-5 xl:w-[22px] lg:w-4 md:w-4 w-4"
                     />
                   </Link>
                   <Link href="https://www.youtube.com/" target="_blank">
                     <Image
+                      alt="img"
                       src={YTt}
                       className=" 2xl:w-6 xl:w-6 lg:w-[18px] md:w-[16px] w-4"
                     />

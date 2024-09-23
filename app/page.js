@@ -78,12 +78,35 @@ export const products = [
       "This product combines the power of eight renowned herbs known for their immune-boosting and pathogen-fighting capabilities. These herbs have a rich historical background, from Hippocrates considering elderberry as a versatile medicinal aid to the Washoe tribe of Nevada relying on lomatium for survival during a tough time.",
   },
 ];
-const page = ({ initialPosts }) => {
-  console.log({ initialPosts }, "Mydata");
+const page = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+
+
+  const [posts, setPosts] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      alert("hh");
+      try {
+        const response = await fetch(
+          "https://onlinebooktrip.com/wp-json/wp/v2/unique-herb-teas"
+        );
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setPosts(data);
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+
+    fetchPosts;
+  });
 
   const handleClick = () => {
     setLoading(true);
@@ -106,27 +129,6 @@ const page = ({ initialPosts }) => {
     setIsDrawerOpen(false);
   };
 
-  const [posts, setPosts] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await fetch(
-          "https://onlinebooktrip.com/wp-json/wp/v2/pages/54"
-        );
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setPosts(data);
-      } catch (err) {
-        setError(err.message);
-      }
-    };
-
-    fetchPosts
-})
 
   return (
     <>
@@ -201,10 +203,11 @@ const page = ({ initialPosts }) => {
               </div>
             </div>
           </div>
-          
+
           <div className="flex justify-center  2xl:mt-[100px] xl:mt-16 lg:mt-16 md:mt-10 sm:mt-6 my-10">
             <div className="2xl:w-[1500px] xl:w-[1000px]  lg:w-[750px]   mx-auto nav ">
               <Image
+                alt="img"
                 src={leaves}
                 className="mx-auto 2xl:w-[57.7px] 2xl:h-[51.91px] xl:w-[35px] lg:w-[25px] sm:w-8 w-5"
               />
@@ -240,11 +243,12 @@ const page = ({ initialPosts }) => {
                       as={`/productD/${product.id}`}
                     >
                       <div
-                        key={index}
+                        key={product.id}
                         data-aos="zoom-out-up"
                         className="2xl:mb-8 2xl:w-[446px] xl:w-[280px] lg:w-[200px] md:w-4/12 md:mx-0 sm:w-3/6 w-4/6 cursor-pointer mx-auto img-div"
                       >
                         <Image
+                          alt="product_img"
                           src={product.image}
                           className=" 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-4/6 w-3/6 cursor-pointer mx-auto md:mx-0"
                         />
@@ -257,6 +261,28 @@ const page = ({ initialPosts }) => {
                       </div>
                     </Link>
                   ))}
+                  {/* {Array.isArray(posts) &&
+                    posts.map((post) => (
+                      <div
+                        key={post.id}
+                        data-aos="zoom-out-up"
+                        className="2xl:mb-8 2xl:w-[446px] xl:w-[280px] lg:w-[200px] md:w-4/12 md:mx-0 sm:w-3/6 w-4/6 cursor-pointer mx-auto img-div"
+                      >
+                        <Image
+                          src={post?.featured_image_url}
+                          width={500}
+                          height={500}
+                          alt="product_img"
+                          className=" 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-4/6 w-3/6 cursor-pointer mx-auto md:mx-0"
+                        />
+                        <h1 className="text-[#1E1E1E] text-center xl:text-[20px] 2xl:text-[30px] 2xl:mt-[18px] 2xl:leading-[50px]  xl:my-2 xl:leading-[35px] lg:my-2 lg:text-[14px] lg:leading-[25px] md:text-[16px] md:my-1 md:leading-[25px] sm:text-[14px] sm:mt-1 sm:leading-[30px] text-[10px] mt-1 leading-[20px] product-name font-semibold">
+                          {post.title.rendered}
+                        </h1>
+                        <h1 className="text-center 2xl:my-3 2xl:text-[36px] 2xl:leading-[25px] xl:text-[22px] xl:my-2 xl:leading-[20px] lg:text-[20px] lg:leading-[25px] md:text-[18px] md:my-1 md:leading-[25px] sm:text-[18px] sm:leading-[25px] text-[14px] product-price">
+                          {post.acf.product_price}
+                        </h1>
+                      </div>
+                    ))} */}
                 </div>
               </div>
             </div>
@@ -309,7 +335,8 @@ const page = ({ initialPosts }) => {
                     >
                       Suli’s Sample Box
                     </h1>
-                    <Image src={groupP} className=" flex mx-auto" />
+
+                    <Image src={groupP} alt="img" className=" flex mx-auto" />
                     <h1
                       id="head"
                       className="text-center  2xl:text-[36px] 2xl:leading-[37px] 2xl:mt-[30px]   xl:text-[25px] xl:leading-[30px] xl:mt-4 lg:mt-3 lg:text-[20px] lg:leading-[25px]  md:mt-3 md:text-[18px] md:leading-[20px]   sm:mt-1 sm:text-[18px] sm:leading-[25px]    mt-1 text-[14px] leading-[20px] find-price"
@@ -387,11 +414,12 @@ const page = ({ initialPosts }) => {
                 >
                   <Image
                     id="img1"
+                    alt="img"
                     src={aa}
                     className=" 2xl:w-[291px] 2xl:h-[292px] xl:w-40 lg:w-24 md:w-32 sm:w-28  mx-auto last-img"
                   />
                   <div className="img3">
-                    <Image id="img4" src={instagram} />
+                    <Image id="img4" alt="img" src={instagram} />
                   </div>
                 </div>
 
@@ -401,11 +429,12 @@ const page = ({ initialPosts }) => {
                 >
                   <Image
                     id="img1"
+                    alt="img"
                     src={bb}
                     className=" 2xl:w-[291px] 2xl:h-[292px] xl:w-40 lg:w-24 md:w-32 sm:w-28  mx-auto last-img"
                   />
                   <div className="img3">
-                    <Image id="img4" src={instagram} />
+                    <Image alt="img" id="img4" src={instagram} />
                   </div>
                 </div>
 
@@ -415,11 +444,12 @@ const page = ({ initialPosts }) => {
                 >
                   <Image
                     id="img1"
+                    alt="img"
                     src={cc}
                     className=" 2xl:w-full xl:w-40 lg:w-24   md:w-32 sm:w-28 w-full  last-img"
                   />
                   <div className="img3">
-                    <Image id="img4" src={instagram} />
+                    <Image id="img4" alt="img" src={instagram} />
                   </div>
                 </div>
 
@@ -429,11 +459,12 @@ const page = ({ initialPosts }) => {
                 >
                   <Image
                     id="img1"
+                    alt="img"
                     src={dd}
                     className=" 2xl:w-full xl:w-40 lg:w-24 md:w-32 sm:w-28 w-full "
                   />
                   <div className="img3">
-                    <Image id="img4" src={instagram} />
+                    <Image id="img4" alt="img" src={instagram} />
                   </div>
                 </div>
                 <div
@@ -442,11 +473,12 @@ const page = ({ initialPosts }) => {
                 >
                   <Image
                     id="img1"
+                    alt="img"
                     src={ee}
                     className=" 2xl:w-full xl:w-40 lg:w-24   md:w-32 sm:w-28 w-full "
                   />
                   <div className="img3">
-                    <Image id="img4" src={instagram} />
+                    <Image id="img4" alt="img" src={instagram} />
                   </div>
                 </div>
               </div>
