@@ -65,7 +65,7 @@ const page = () => {
   };
   return (
     <>
-      <Navbar />
+      <Navbar title={"faqs"} />
       <div className="2xl:w-[1500px] xl:w-[1000px]  lg:w-[880px]  md:w-[620px] sm:w-[550px] w-[100%]  m-auto nav 2xl:mt-[180px] xl:mt-32 lg:mt-28 sm:mt-24 mt-20">
         <div className=" mx-auto " data-aos="fade-up">
           <h1 className="font-semibold text-[25px] sm:text-[30px] lg:text-3xl my-10 ">FAQs</h1>

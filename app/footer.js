@@ -13,8 +13,7 @@ const Footer = () => {
   return (
     <>
       <div>
-        <footer className="bg-[#E9F5DE] 2xl:pt-[20px] 2xl:mt-[100px] xl:pt-4 xl:mt-20  lg:pt-0 lg:mt-16 md:pt-5 md:mt-0 sm:pt-5 sm:mt-10  mt-10    font-size: 16px !important;
-">
+        <footer className="bg-[#E9F5DE] 2xl:pt-[20px] 2xl:mt-[100px] xl:pt-4 xl:mt-20  lg:pt-0 lg:mt-16 md:pt-5 md:mt-0 sm:pt-5 sm:mt-10  mt-10 font-size: 16px !important;">
           <div className="2xl:w-[1500px] xl:w-[1000px]  lg:w-[880px]   mx-auto lg:flex  lg:justify-around lg:flex-row  xl:flex xl:flex-row  2xl:mx-auto 2xl:flex 2xl:justify-around   2xl:mb-10 xl:mb-2 lg:mb-8 md:flex-col md:justify-center md:mb-10 sm:flex-col sm:justify-center sm:mb-5  flex-col justify-center nav"></div>
           <div className="2xl:w-[1500px] xl:w-[1000px]  lg:w-[880px] md:w-[620px] sm:w-[550px]  mx-auto lg:flex  lg:justify-around lg:flex-row  xl:flex xl:flex-row  2xl:mx-auto 2xl:flex 2xl:justify-around   2xl:mb-10 xl:mb-2 lg:mb-8 md:flex-col md:justify-center md:mb-10 sm:flex-col sm:justify-center sm:mb-5  flex-col justify-center nav">
             <div className="flex flex-col sm:flex sm:flex-col md:flex-row 2xl:justify-between mx-auto lg:w-full lg:m-0 xl:w-[70%]  2xl:w-[90%] xl:m-0 md:w-full md:my-5 sm:w-10/12  sm:my-5 ">
@@ -23,13 +22,11 @@ const Footer = () => {
                   src={leaves}
                   className="mx-auto 2xl:w-16 md:w-10 sm:w-7 w-5 my-2"
                 />
-
                <h1
                 className="2xl:text-[40px] 2xl:mt-8 2xl:leading-[26px] xl:text-[30px] xl:leading-[20px]  lg:text-[25px] lg:leading-[16px] lg:mt-6 md:text-[20px]  sm:text-[18px] sm:mb-5 text-[25px] footer-logo text-center"
                 id="nav-head"
                >
                 TEAS
-                
                </h1> */}
                 <div className="mx-auto md:mx-0">
                   <Link href="/">
@@ -84,6 +81,7 @@ const Footer = () => {
                   </li>
                 </Link>
               </div>
+
               <div className="mx-auto sm:my-5 my-5 w-1/3 md:w-1/4 text-center md:text-left">
                 <h1
                   className="list-none 2xl:pb-[15px] xl:pb-[10px] lg:pb-[8px]  cursor-pointer  2xl:my-3 2xl:leading-[27px] 2xl:text-[18px] text-[##1E1E1E] xl:my-1 xl:leading-[20px] xl:text-[14px] lg:my-1 lg:leading-[18px] lg:text-[12px] md:my-1 md:leading-[18px] md:text-[12px]  sm:my-1 sm:leading-[10px] sm:text-[10px] text-[10px] leading-[18px] footer-hesdings"
@@ -127,6 +125,7 @@ const Footer = () => {
                   </li>
                 </Link>
               </div>
+
               {/* <div className="sm:mx-auto sm:my-5 mx-auto my-5 ">
                 <h1
                   className="list-none cursor-pointer 2xl:pb-[15px] xl:pb-[10px] lg:pb-[8px]  2xl:my-3 2xl:leading-[27px] 2xl:text-[18px] text-[##1E1E1E] xl:my-1 xl:leading-[20px] xl:text-[14px] lg:my-1 lg:leading-[18px] lg:text-[12px] md:my-1 md:leading-[18px] md:text-[12px]  sm:my-1 sm:leading-[10px] sm:text-[10px] text-[10px] leading-[18px] footer-hesdings"
@@ -164,6 +163,7 @@ const Footer = () => {
                 </li>
               </div> */}
             </div>
+
             <div
               className="flex justify-center my-4
               5 md:flex md:justify-center sm:flex sm:justify-center lg:w-4/12 lg:flex-none xl:flex-none xl:w-3/12 2xl:w-3/12 "
