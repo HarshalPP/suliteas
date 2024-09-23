@@ -33,6 +33,11 @@ const Landing = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const [post, setPost] = useState([]);
+  const BG = post?.acf?.banner_section.banner_image;
+  const titles = post?.acf;
+  const instagram = post?.acf?.home_instagram;
+  const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -47,6 +52,7 @@ const Landing = () => {
         const data = await response.json();
         setPosts(data);
         setLoading(false);
+     
       } catch (err) {
         setError(err.message);
       }
@@ -54,11 +60,9 @@ const Landing = () => {
 
     fetchPosts();
   }, []);
-  const [post, setPost] = useState([]);
 
   useEffect(() => {
     setLoading(true);
-
     const fetchPosts = async () => {
       try {
         const response = await fetch(
@@ -70,6 +74,7 @@ const Landing = () => {
         const data = await response.json();
         setPost(data);
         setLoading(false);
+        setShowButton(true);
       } catch (err) {
         setError(err.message);
       }
@@ -77,9 +82,7 @@ const Landing = () => {
 
     fetchPosts();
   }, []);
-  const BG = post?.acf?.banner_section.banner_image;
-  const titles = post?.acf;
-  const instagram = post?.acf?.home_instagram;
+
   const handleClick = () => {
     setLoading(true);
     setTimeout(() => {
@@ -100,7 +103,6 @@ const Landing = () => {
   };
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(null);
-
 
   return (
     <>
@@ -164,20 +166,24 @@ const Landing = () => {
                   </div>
                 )}
                 <Link href="/shop-teas">
-                  <button
-                    onClick={handleClick}
-                    disabled={loading}
-                    className={`bg-[#1E1E1E] 2xl:mt-4 2xl:px-8 2xl:my-0 xl:mt-3 xl:px-6 lg:mt-3 lg:px-5 md:my-2 md:px-5 sm:my-2 sm:px-3 btn-curv ${
-                      loading ? "opacity-50 cursor-not-allowed" : ""
-                    }`}
-                  >
-                    <p
-                      className="text-white 2xl:text-[20px] 2xl:leading-[26px] 2xl:py-[17px] 2xl:px-[16px] xl:text-[16px] xl:leading-[18px] xl:py-[14px] xl:px-[16px]
-          lg:text-[12px] lg:leading-[14px] lg:py-[12px] lg:px-[7px]  md:py-[5px] md:px-[3px] md:text:[8px] sm:text-[6px] sm:leading-[14px] sm:py-[3px] sm:px-[3px] text-[4px] leading-[10px] py-[1px] px-[10px] head-bttn "
+                
+
+                  {showButton && (
+                    <button
+                      onClick={handleClick}
+                      disabled={loading}
+                      className={`bg-[#1E1E1E] 2xl:mt-4 2xl:px-8 2xl:my-0 xl:mt-3 xl:px-6 lg:mt-3 lg:px-5 md:my-2 md:px-5 sm:my-2 sm:px-3 btn-curv ${
+                        loading ? "opacity-50 cursor-not-allowed" : ""
+                      }`}
                     >
-                      Shop Now
-                    </p>
-                  </button>
+                      <p
+                        className="text-white 2xl:text-[20px] 2xl:leading-[26px] 2xl:py-[17px] 2xl:px-[16px] xl:text-[16px] xl:leading-[18px] xl:py-[14px] xl:px-[16px]
+              lg:text-[12px] lg:leading-[14px] lg:py-[12px] lg:px-[7px] md:py-[5px] md:px-[3px] md:text:[8px] sm:text-[6px] sm:leading-[14px] sm:py-[3px] sm:px-[3px] text-[4px] leading-[10px] py-[1px] px-[10px] head-bttn"
+                      >
+                        Shop Now
+                      </p>
+                    </button>
+                  )}
                 </Link>
               </div>
             </div>
