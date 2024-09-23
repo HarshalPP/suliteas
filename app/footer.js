@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import twitter from "../public/images/twitter.svg";
 import fbb from "../public/images/facebook.svg";
 import insta from "../public/images/instagram.svg";
@@ -10,6 +10,33 @@ import Image from "next/image";
 import leaves from "../public/images/leaves 1.svg";
 
 const Footer = () => {
+  const [posts, setPosts] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  console.log(posts, "postass");
+  useEffect(() => {
+    setLoading(true);
+
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch(
+          "https://onlinebooktrip.com/wp-json/wp/v2/pages/54"
+        );
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setPosts(data);
+        setLoading(false);
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+
+    fetchPosts();
+  }, []);
+  const logo = posts.acf;
   return (
     <>
       <div>
@@ -30,8 +57,10 @@ const Footer = () => {
                </h1> */}
                 <div className="mx-auto md:mx-0">
                   <Link href="/">
-                    <img
-                      src="/images/logo.png"
+                    <Image
+                      src={logo?.home_logo?.home_logo_image}
+                      width={197}
+                      height={68}
                       className="w-24 xl:w-40  2xl:w-52   mx-auto"
                     />
                   </Link>

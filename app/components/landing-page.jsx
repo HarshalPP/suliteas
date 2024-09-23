@@ -5,18 +5,6 @@ import search from "../../public/images/search.webp";
 import user from "../../public/images/usera.webp";
 import shopbag from "../../public/images/shopbag.webp";
 import leaves from "../../public/images/leaves 1.svg";
-import ListingsF from "../../public/images/Listings-1.webp";
-import ListingsS from "../../public/images/Listings-2.webp";
-import ListingsT from "../../public/images/Listings-3.webp";
-import ListingsFo from "../../public/images/Listings-4.webp";
-import ListingsFI from "../../public/images/Listings-5.webp";
-import ListingsSI from "../../public/images/Listings-6.webp";
-import groupP from "../../public/images/groupP.webp";
-import aa from "../../public/images/11.webp";
-import bb from "../../public/images/22.webp";
-import cc from "../../public/images/pending.webp";
-import dd from "../../public/images/33.webp";
-import ee from "../../public/images/44.webp";
 import insta from "../../public/images/instagram 1.svg";
 import cut from "../../public/images/wrong.svg";
 import { useState } from "react";
@@ -27,7 +15,6 @@ import Footer from "../footer";
 import Navbar from "../navbar";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import Products from "./products/page";
 
 const Landing = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
