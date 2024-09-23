@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from "react";
 import twitter from "../public/images/twitter.svg";
 import fbb from "../public/images/facebook.svg";
