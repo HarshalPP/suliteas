@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
+    "@netlify/plugin-nextjs": "^5.7.2",
     "aos": "^2.3.4",
     "heroicons": "^2.0.18",
     "micromatch": "^4.0.8",
