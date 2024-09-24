@@ -75,7 +75,7 @@ const Landing = () => {
     setTimeout(() => {
       setLoading(false);
       router.push("/shop-teas");
-    }, 2000);
+    }, 7000);
   };
   useEffect(() => {
     AOS.init({ duration: 1000 });

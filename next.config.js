@@ -7,5 +7,4 @@ module.exports = {
     images: {
       domains: ['onlinebooktrip.com'],
     },
-  };
-  
+};
